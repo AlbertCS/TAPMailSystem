@@ -1,5 +1,6 @@
 package Part22.BaseClasses;
 
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -19,6 +20,11 @@ public class MailStoreMem extends MailStore {
     @Override
     public void sendMail(Message message) {
         messages.add(message);
+    }
+
+    @Override
+    public void clearTheFile() throws IOException {
+
     }
 
     @Override

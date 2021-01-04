@@ -20,5 +20,6 @@ public abstract class MailStore {
      */
     public abstract void sendMail(Message message) throws IOException;
 
+    public abstract void clearTheFile() throws IOException;
 
 }

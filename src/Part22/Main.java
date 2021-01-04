@@ -18,7 +18,9 @@ public class Main {
         System.out.println("MAIL STORE FILE");
 
         // 1. Initialize
+
         MailStore mailStore = new MailStoreFile();
+        mailStore.clearTheFile();
         MessageNewerComparator comparator = new MessageNewerComparator();
         UserNameComparator comparator1 = new UserNameComparator();
 

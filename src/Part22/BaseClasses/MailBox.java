@@ -20,6 +20,7 @@ public class MailBox implements Iterable<Message> {
 
 
     private MailStore mailStore;
+
     private User user;
 
     public MailBox(MailStore mailStore, User user) {

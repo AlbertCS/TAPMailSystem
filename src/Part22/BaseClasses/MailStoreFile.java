@@ -15,6 +15,15 @@ public class MailStoreFile extends MailStore {
     private File file = new File("mails.txt");
     private String fileName = "mails.txt";
 
+
+    public void clearTheFile() throws IOException {
+        FileWriter fwOb = new FileWriter("mails.txt", false);
+        PrintWriter pwOb = new PrintWriter(fwOb, false);
+        pwOb.flush();
+        pwOb.close();
+        fwOb.close();
+    }
+
     /**
      * Constructor MailStoreFile
      */
