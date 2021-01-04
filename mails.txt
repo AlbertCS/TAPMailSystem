@@ -1,21 +1,7 @@
 
-Dubte Tap;Hola, suspendrem tap?;LauraRH;AlbertCS;29-12-2020 15:11:06 +0100
-Dubte Tap;No, ho aprovarem segur;AlbertCS;LauraRH;29-12-2020 15:11:06 +0100
-Hola;Vull eucaliptus que tinc gana;Koala;LauraRH;29-12-2020 15:11:06 +0100
-Albert!!;La laura no em dona de menjar;Koala;AlbertCS;29-12-2020 15:11:06 +0100
-Hola;Avui fa bon dia? Ja se que ningu ho ha demanat;LauraRH;AlbertCS;29-12-2020 15:11:06 +0100
-Dubte Tap;Hola, suspendrem tap?;LauraRH;AlbertCS;31-12-2020 12:56:53 +0100
-Dubte Tap;No, ho aprovarem segur;AlbertCS;LauraRH;31-12-2020 12:56:53 +0100
-Hola;Vull eucaliptus que tinc gana;Koala;LauraRH;31-12-2020 12:56:53 +0100
-Albert!!;La laura no em dona de menjar;Koala;AlbertCS;31-12-2020 12:56:53 +0100
-Hola;Avui fa bon dia? Ja se que ningu ho ha demanat;LauraRH;AlbertCS;31-12-2020 12:56:53 +0100
-Dubte Tap;Hola, suspendrem tap?;LauraRH;AlbertCS;31-12-2020 13:49:19 +0100
-Dubte Tap;No, ho aprovarem segur;AlbertCS;LauraRH;31-12-2020 13:49:19 +0100
-Hola;Vull eucaliptus que tinc gana;Koala;LauraRH;31-12-2020 13:49:19 +0100
-Albert!!;La laura no em dona de menjar;Koala;AlbertCS;31-12-2020 13:49:19 +0100
-Hola;Avui fa bon dia? Ja se que ningu ho ha demanat;LauraRH;AlbertCS;31-12-2020 13:49:19 +0100
-Dubte Tap;Hola, suspendrem tap?;LauraRH;AlbertCS;31-12-2020 13:56:03 +0100
-Dubte Tap;No, ho aprovarem segur;AlbertCS;LauraRH;31-12-2020 13:56:03 +0100
-Hola;Vull eucaliptus que tinc gana;Koala;LauraRH;31-12-2020 13:56:03 +0100
-Albert!!;La laura no em dona de menjar;Koala;AlbertCS;31-12-2020 13:56:03 +0100
-Hola;Avui fa bon dia? Ja se que ningu ho ha demanat;LauraRH;AlbertCS;31-12-2020 13:56:03 +0100
+Dubte Tap;Hola, suspendrem tap?;LauraRH;AlbertCS;04-01-2021 19:17:03 +0100
+Dubte Tap;No, ho aprovarem segur que si que si que si que magraden les mandonguilles amb tomaquet;AlbertCS;LauraRH;04-01-2021 19:17:03 +0100
+No;No;AlbertCS;LauraRH;04-01-2021 19:17:03 +0100
+Hola;Vull eucaliptus que tinc gana body extra;Koala spam;LauraRH;04-01-2021 19:17:03 +0100
+Albert!!;La laura no em dona de menjar;Koala spam;AlbertCS;04-01-2021 19:17:03 +0100
+Hola;Avui fa bon dia? Ja se que ningu ho ha demanat;LauraRH;AlbertCS;04-01-2021 19:17:03 +0100
