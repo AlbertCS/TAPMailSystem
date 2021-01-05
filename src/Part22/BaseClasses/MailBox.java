@@ -48,10 +48,10 @@ public class MailBox implements Iterable<Message> {
         mailStore.sendMail(new Message(subject, body, user.getUserName(), receiver));
         System.out.println("\nMail Send");
     }
-    public void sendMailDecorator(String subject, String body, String receiver) throws IOException {
+    /*public void sendMailDecorator(String subject, String body, String receiver) throws IOException {
         mailStore.sendMail(new WrapDecorator(subject, body, user.getUserName(), receiver));
         System.out.println("\nMail Decorator Send");
-    }
+    }*/
 
     public void getMail(Comparator comparator){
         Collections.sort(receivedMessages, comparator);

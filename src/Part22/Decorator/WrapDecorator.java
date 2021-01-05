@@ -11,11 +11,11 @@ public class WrapDecorator extends Message {
 
     private Strategy strategy;
 
-
+/*
     public WrapDecorator(String subject, String body, String sender, String receiver) {
         super(subject, strategy.doOperation(body), sender, receiver);
     }
-
+*/
     public WrapDecorator(String subject, String body, String sender, String receiver, String creationDate) {
         super(subject, body+" body extra", sender, receiver, creationDate);
     }
