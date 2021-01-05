@@ -40,7 +40,7 @@ public class MailBox implements Iterable<Message> {
         }
     }
 
-    public void sendMail(String subject, String body, String receiver) throws IOException, NoSuchPaddingException, NoSuchAlgorithmException {
+    public void sendMail(String subject, String body, String receiver) throws IOException {
         mailStore.sendMail(subject, body, user.getUserName(), receiver);
         System.out.println("\nMail Decorator Send");
     }
@@ -70,19 +70,15 @@ public class MailBox implements Iterable<Message> {
 
         @Override
         public boolean hasNext() {
-
-            if(index < receivedMessages.size()){
-                return true;
-            }
-            return false;
+            return index < receivedMessages.size();
         }
 
         @Override
         public Message next() {
 
-            if(this.hasNext()){
+            if(this.hasNext())
                 return receivedMessages.get(index++);
-            }
+
             return null;
         }
     }
