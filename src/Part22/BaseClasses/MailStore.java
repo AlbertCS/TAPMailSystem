@@ -18,7 +18,7 @@ public abstract class MailStore {
     /**
      * Send a new message to a user.
      */
-    public abstract void sendMail(Message message) throws IOException;
+    public abstract void sendMail(String subject, String body, String userName, String receiver) throws IOException;
 
     public abstract void clearTheFile() throws IOException;
 

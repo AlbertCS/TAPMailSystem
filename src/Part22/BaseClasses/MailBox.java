@@ -1,9 +1,8 @@
 package Part22.BaseClasses;
 
-import Part2.observer.MailFilter;
-import Part22.Decorator.WrapDecorator;
-
+import javax.crypto.NoSuchPaddingException;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
@@ -17,7 +16,6 @@ import java.util.stream.Collectors;
 public class MailBox implements Iterable<Message> {
 
     private LinkedList<Message> receivedMessages = new LinkedList<>();
-
 
     private MailStore mailStore;
 
@@ -35,7 +33,6 @@ public class MailBox implements Iterable<Message> {
 
     }
 
-
     public void listMail() {
         System.out.println("\nMessage list for "+user.getUserName()+":");
         for (Message msg:receivedMessages) {
@@ -43,15 +40,10 @@ public class MailBox implements Iterable<Message> {
         }
     }
 
-
-    public void sendMail(String subject, String body, String receiver) throws IOException {
-        mailStore.sendMail(new Message(subject, body, user.getUserName(), receiver));
-        System.out.println("\nMail Send");
-    }
-    /*public void sendMailDecorator(String subject, String body, String receiver) throws IOException {
-        mailStore.sendMail(new WrapDecorator(subject, body, user.getUserName(), receiver));
+    public void sendMail(String subject, String body, String receiver) throws IOException, NoSuchPaddingException, NoSuchAlgorithmException {
+        mailStore.sendMail(subject, body, user.getUserName(), receiver);
         System.out.println("\nMail Decorator Send");
-    }*/
+    }
 
     public void getMail(Comparator comparator){
         Collections.sort(receivedMessages, comparator);

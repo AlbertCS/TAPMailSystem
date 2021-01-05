@@ -3,10 +3,7 @@ package Part22;
 import Part22.BaseClasses.*;
 import Part22.Comparator.MessageNewerComparator;
 import Part22.Comparator.UserNameComparator;
-import Part22.strategy.Context;
-import Part22.strategy.OperationDecrypt;
-import Part22.strategy.OperationEncrypt;
-import Part22.strategy.OperationReverse;
+import Part22.strategy.*;
 
 
 import javax.crypto.NoSuchPaddingException;
@@ -24,7 +21,6 @@ public class Main {
         System.out.println("MAIL STORE FILE");
 
         // 1. Initialize
-
         MailStore mailStore = new MailStoreFile();
         mailStore.clearTheFile();
         MessageNewerComparator comparator = new MessageNewerComparator();
@@ -36,19 +32,21 @@ public class Main {
         MailBox mailBoxAlbert = mailSystem.createUser("AlbertCS", "Albert", 1997, mailStore);
         MailBox mailBoxKoala = mailSystem.createUser("Koala spam", "Laura", 2001, mailStore);
 
-        Context context = new Context(new OperationReverse());
+
+        /*Context context = new Context(new OperationReverse());
         System.out.println("\nReverse: "+context.executeStrategy("Student Marks"));
         Context context1 = new Context(new OperationEncrypt());
         System.out.println("\nEncrypt: "+context1.executeStrategy("Student Marks"));
         Context context2 = new Context(new OperationDecrypt());
-        System.out.println("\nDecrypt: "+context2.executeStrategy("Student Marks"));
+        System.out.println("\nDecrypt: "+context2.executeStrategy("Student Marks"));*/
 
-        /*
+
+
         // 3. Send messages
         mailBoxLaura.sendMail("Dubte Tap","Hola, suspendrem tap?","AlbertCS");
         mailBoxAlbert.sendMail("Dubte Tap","No, ho aprovarem segur que si que si que si que magraden les mandonguilles amb tomaquet","LauraRH");
         mailBoxAlbert.sendMail("No","No","LauraRH");
-        mailBoxKoala.sendMailDecorator("Hola","Vull eucaliptus que tinc gana","LauraRH");
+        mailBoxKoala.sendMail("Hola","Vull eucaliptus que tinc gana","LauraRH");
         mailBoxKoala.sendMail("Albert!!","La laura no em dona de menjar","AlbertCS");
         mailBoxLaura.sendMail("Hola","Avui fa bon dia? Ja se que ningu ho ha demanat","AlbertCS");
 
@@ -58,7 +56,7 @@ public class Main {
 
         System.out.println("\nMessage List:");
         mailBoxLaura.listMail();
-        */
+
 
     }
 }

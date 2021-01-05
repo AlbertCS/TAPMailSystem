@@ -1,6 +1,15 @@
 package Part22.BaseClasses;
 
+import Part22.Decorator.DecryptDecorator;
+import Part22.Decorator.EncryptDecorator;
+import Part22.strategy.OperationDecrypt;
+import Part22.strategy.OperationEncrypt;
+import Part22.strategy.OperationReverse;
+import Part22.strategy.Strategy;
+
+import javax.crypto.NoSuchPaddingException;
 import java.io.*;
+import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
 import java.util.LinkedList;
 import java.util.Locale;
@@ -14,6 +23,9 @@ public class MailStoreFile extends MailStore {
 
     private File file = new File("mails.txt");
     private String fileName = "mails.txt";
+    private Strategy strategyR = new OperationReverse();
+    private Strategy strategyE = new OperationEncrypt();
+    private Strategy strategyD = new OperationDecrypt();
 
 
     public void clearTheFile() throws IOException {
@@ -28,17 +40,21 @@ public class MailStoreFile extends MailStore {
      * Constructor MailStoreFile
      */
     public MailStoreFile() {
-
     }
 
     @Override
-    public void sendMail(Message message) throws IOException {
+    public void sendMail(String subject, String body, String userName, String receiver) throws IOException {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
+            Message message = new EncryptDecorator(subject,  body,  userName,  receiver, strategyR, strategyE);
             writer.append(message.saveFile());
             writer.close();
         }catch (IOException s){
             System.out.println("Error: "+s);
+        } catch (NoSuchPaddingException e) {
+            e.printStackTrace();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
         }
     }
 
@@ -59,12 +75,16 @@ public class MailStoreFile extends MailStore {
                     String receiver = tokens.nextToken();
                     String dateSend = tokens.nextToken();
                     if(receiver.equalsIgnoreCase(username)){
-                        receivedMessages.add(new Message(subject, body, sender, receiver, dateSend));
+                        receivedMessages.add(new DecryptDecorator(subject, body, sender, receiver, dateSend, strategyD, strategyR));
                     }
                 }
             }
         }catch (IOException s){
             System.out.println("Error: "+s);
+        } catch (NoSuchPaddingException e) {
+            e.printStackTrace();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
         }
         return receivedMessages;
     }
