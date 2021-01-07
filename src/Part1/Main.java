@@ -14,8 +14,6 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss ZZZ");
-
         System.out.println("MAIL STORE MEM");
 
         // 1. Initialize
@@ -61,7 +59,6 @@ public class Main {
         System.out.println("\nPrinting all messsages:");
         mailSystem.getAllMessages();
 
-        //mailSystem.getAllUsers();
 
         // 9a. Filter messages subject is a single word
         System.out.println("\nSingle word:");
@@ -97,11 +94,9 @@ public class Main {
 
 
         // 16. Change to File implementation
-
         System.out.println("\nMAIL STORE FILE");
 
         // 1. Initialize
-
         MailStore mailStoreFile = new MailStoreFile();
 
         // 2. Create users
@@ -142,8 +137,6 @@ public class Main {
         System.out.println("\nPrinting all messsages:");
         mailSystemFile.getAllMessages();
 
-        //mailSystem.getAllUsers();
-
         // 9a. Filter messages subject is a single word
         System.out.println("\nSingle word:");
         mailSystemFile.filterAllMessagesSingleWord().forEach(System.out::println);
@@ -173,7 +166,6 @@ public class Main {
 
         // 15. Filter messages send by a user born before 2000
         System.out.println("\nBefore year:");
-        //Predicate<User> beforeYear = p -> p.getBirthYear() < 2000;
         mailSystemFile.filterAllMessagesYear(beforeYear).forEach(System.out::println);
 
 

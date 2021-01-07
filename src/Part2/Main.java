@@ -18,16 +18,11 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss ZZZ");
-
         System.out.println("MAIL STORE MEM");
 
         // 1. Initialize
         MailStore mailStore = new MailStoreMem();
         MessageNewerComparator comparator = new MessageNewerComparator();
-        UserNameComparator comparator1 = new UserNameComparator();
-
-
 
         // 2. Create users
         MailSystem mailSystem = new MailSystem();
@@ -53,9 +48,11 @@ public class Main {
         // 4. Update one mailBox
         mailBoxLaura.update(comparator);
 
+        // 5. List the spam messages
         System.out.println("\nSpam messages:");
         mailBoxLaura.listSpam();
 
+        // 6. List the messages
         System.out.println("\nMessage List:");
         mailBoxLaura.listMail();
 

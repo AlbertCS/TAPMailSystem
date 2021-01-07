@@ -13,9 +13,7 @@ import java.text.SimpleDateFormat;
 public class Main {
     //Main part 2
 
-    public static void main(String[] args) throws IOException, NoSuchPaddingException, NoSuchAlgorithmException {
-
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss ZZZ");
+    public static void main(String[] args) throws IOException {
 
         System.out.println("MAIL STORE FILE");
 
@@ -23,23 +21,12 @@ public class Main {
         MailStore mailStore = new MailStoreFile();
         mailStore.clearTheFile();
         MessageNewerComparator comparator = new MessageNewerComparator();
-        UserNameComparator comparator1 = new UserNameComparator();
 
         // 2. Create users
         MailSystem mailSystem = new MailSystem();
         MailBox mailBoxLaura =  mailSystem.createUser("LauraRH", "Laura", 1997, mailStore);
         MailBox mailBoxAlbert = mailSystem.createUser("AlbertCS", "Albert", 1997, mailStore);
         MailBox mailBoxKoala = mailSystem.createUser("Koala spam", "Laura", 2001, mailStore);
-
-
-        /*Context context = new Context(new OperationReverse());
-        System.out.println("\nReverse: "+context.executeStrategy("Student Marks"));
-        Context context1 = new Context(new OperationEncrypt());
-        System.out.println("\nEncrypt: "+context1.executeStrategy("Student Marks"));
-        Context context2 = new Context(new OperationDecrypt());
-        System.out.println("\nDecrypt: "+context2.executeStrategy("Student Marks"));*/
-
-
 
         // 3. Send messages
         mailBoxLaura.sendMail("Dubte Tap","Hola, suspendrem tap?","AlbertCS");
@@ -51,7 +38,6 @@ public class Main {
 
         // 4. Update one mailBox
         mailBoxLaura.update(comparator);
-
 
         System.out.println("\nMessage List:");
         mailBoxLaura.listMail();

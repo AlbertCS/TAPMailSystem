@@ -35,7 +35,7 @@ public class MailStoreRedis implements MailStore {
 
     @Override
     public void sendMail(Message message) throws IOException {
-            jedis.set(message.getReceiver(), message.toString());
+            jedis.lpush(message.getReceiver(), message.toString());
     }
 
 
