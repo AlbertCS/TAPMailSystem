@@ -28,6 +28,6 @@ public class CreateUserCmd implements Command {
 
     @Override
     public void execute() {
-        mailSystem.createUser(userName, name, birthYear, mailStore);
+        mailSystem.createUser(userName, name, birthYear);
     }
 }

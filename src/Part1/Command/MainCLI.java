@@ -24,12 +24,12 @@ public class MainCLI {
         // 1. Initialize
         MailStore mailStore = new MailStoreMem();
         MessageNewerComparator comparator = new MessageNewerComparator();
-        MailSystem mailSystem = new MailSystem();
+        MailSystem mailSystem = new MailSystem(mailStore);
 
         // 2. Create users
-        MailBox mailBoxLaura =  mailSystem.createUser("LauraRH", "Laura", 1997, mailStore);
-        MailBox mailBoxAlbert = mailSystem.createUser("AlbertCS", "Albert", 1997, mailStore);
-        MailBox mailBoxKoala = mailSystem.createUser("Koala", "Laura", 2001, mailStore);
+        MailBox mailBoxLaura =  mailSystem.createUser("LauraRH", "Laura", 1997);
+        MailBox mailBoxAlbert = mailSystem.createUser("AlbertCS", "Albert", 1997);
+        MailBox mailBoxKoala = mailSystem.createUser("Koala", "Laura", 2001);
 
         // 3. Send messages
         mailBoxLaura.sendMail("Dubte Tap","Hola, suspendrem tap?","AlbertCS");

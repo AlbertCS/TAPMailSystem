@@ -11,12 +11,13 @@ public class MailSystem {
 
     private LinkedList<User> users = new LinkedList<>();
     private LinkedList<MailBox> mailBoxes = new LinkedList<>();
+    private MailStore mailStore;
 
-    public MailSystem() {
-
+    public MailSystem(MailStore mailStore) {
+        this.mailStore = mailStore;
     }
 
-    public MailBox createUser(String userName, String name, int birthYear, MailStore mailStore){
+    public MailBox createUser(String userName, String name, int birthYear){
         User user = new User(userName, name, birthYear);
         MailBox mailBox = new MailBox(mailStore, user);
         users.add(user);
