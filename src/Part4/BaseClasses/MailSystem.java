@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-@Config(store = "part4.MailStoreMem", log = false)
+@Config(store = "Part4.BaseClasses.MailStoreMem", log = false)
 public class MailSystem {
 
     private LinkedList<User> users = new LinkedList<>();
@@ -18,7 +18,7 @@ public class MailSystem {
     private MailStore mailStore;
 
 
-    private void readAnnotation() throws InvocationTargetException, IllegalAccessException {
+    private void readAnnotation() throws InvocationTargetException, IllegalAccessException, ClassNotFoundException, InstantiationException, NoSuchMethodException {
         boolean log = false;
         String store = null;
 
@@ -29,14 +29,12 @@ public class MailSystem {
             log = (boolean)methods[0].invoke(annotation, (Object[])null);
             store = (String) methods[1].invoke(annotation, (Object[])null);
         }
-
-        System.out.println("store = " + store);
-        System.out.println("log = " + log);
+        Class<?> aClass = Class.forName(store);
+        this.mailStore = (MailStore) aClass.getDeclaredConstructor().newInstance();
 
     }
 
-    public MailSystem(MailStore mailStore) throws InvocationTargetException, IllegalAccessException {
-        this.mailStore = mailStore;
+    public MailSystem() throws InvocationTargetException, IllegalAccessException, InstantiationException, NoSuchMethodException, ClassNotFoundException {
         readAnnotation();
     }
 

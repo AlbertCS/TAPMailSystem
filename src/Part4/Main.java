@@ -12,7 +12,7 @@ import java.util.function.Predicate;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException, InvocationTargetException, IllegalAccessException {
+    public static void main(String[] args) throws IOException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, ClassNotFoundException, InstantiationException {
 
         System.out.println("MAIL SYSTEM P4");
 
@@ -21,7 +21,7 @@ public class Main {
         MessageNewerComparator comparator = new MessageNewerComparator();
 
         // 2. Create users
-        MailSystem mailSystem = new MailSystem(mailStore);
+        MailSystem mailSystem = new MailSystem();
         MailBox mailBoxLaura =  mailSystem.createUser("LauraRH", "Laura", 1997);
         MailBox mailBoxAlbert = mailSystem.createUser("AlbertCS", "Albert", 1997);
         MailBox mailBoxKoala = mailSystem.createUser("Koala", "Laura", 2001);
