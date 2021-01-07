@@ -1,6 +1,8 @@
 package Part4.BaseClasses;
 
 import java.lang.annotation.Annotation;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
@@ -16,13 +18,26 @@ public class MailSystem {
     private MailStore mailStore;
 
 
-    private void readAnnotation(){
-        Annotation[] anot = MailSystem.class.getAnnotations();
-        String store = anot[0].toString();
+    private void readAnnotation() throws InvocationTargetException, IllegalAccessException {
+        boolean log = false;
+        String store = null;
+
+        System.out.println("\nAnnotation");
+        for (Annotation annotation : MailSystem.class.getAnnotations()) {
+            Class<? extends Annotation> type = annotation.annotationType();
+            Method[] methods = type.getDeclaredMethods();
+            log = (boolean)methods[0].invoke(annotation, (Object[])null);
+            store = (String) methods[1].invoke(annotation, (Object[])null);
+        }
+
+        System.out.println("store = " + store);
+        System.out.println("log = " + log);
+
     }
 
-    public MailSystem(MailStore mailStore) {
+    public MailSystem(MailStore mailStore) throws InvocationTargetException, IllegalAccessException {
         this.mailStore = mailStore;
+        readAnnotation();
     }
 
     public MailBox createUser(String userName, String name, int birthYear){

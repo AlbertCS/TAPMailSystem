@@ -5,13 +5,14 @@ import Part4.Comparator.MessageNewerComparator;
 import Part4.Comparator.UserNameComparator;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InvocationTargetException, IllegalAccessException {
 
         System.out.println("MAIL SYSTEM P4");
 
