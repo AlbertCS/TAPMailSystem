@@ -1,6 +1,6 @@
 package Part3;
 
-import Part3.Comparator.MessageNewerComparator;
+import Part1.Comparator.MessageNewerComparator;
 import Part3.BaseClasses.*;
 import Part3.Comparator.UserNameComparator;
 import redis.clients.jedis.Jedis;
@@ -27,7 +27,7 @@ public class Main {
 
         // 1. Initialize
         MailStoreRedis mailStore = MailStoreRedis.getInstance();
-        MessageNewerComparator comparator = new MessageNewerComparator();
+        Part1.Comparator.MessageNewerComparator comparator = new MessageNewerComparator();
 
         // Clean redis server
         mailStore.clearMailStore();
