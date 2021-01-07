@@ -7,7 +7,7 @@ import java.util.LinkedList;
  * @author Albert Cañellas and Laura Romero.
  * MailStore class
  */
-public abstract class MailStore {
+public interface MailStore {
 
     /**
      * Retrieve all the messages that are intended for a certain user.
