@@ -1,4 +1,6 @@
-package Part3.BaseClasses;
+package Part3.Factory;
+
+import Part3.BaseClasses.MailStore;
 
 public interface MailStoreFactory {
 

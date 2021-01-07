@@ -2,13 +2,10 @@ package Part3;
 
 import Part3.Comparator.MessageNewerComparator;
 import Part3.BaseClasses.*;
-import redis.clients.jedis.Jedis;
+import Part3.Factory.MailStoreFactory;
+import Part3.Factory.MailStoreRedisFactory;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.List;
-import java.util.Map;
-import java.util.function.Predicate;
 
 public class Main {
 
