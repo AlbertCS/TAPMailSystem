@@ -1,5 +1,6 @@
 package Part4.BaseClasses;
 
+import java.lang.annotation.Annotation;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
@@ -7,11 +8,18 @@ import java.util.Map;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+@Config(store = "part4.MailStoreMem", log = false)
 public class MailSystem {
 
     private LinkedList<User> users = new LinkedList<>();
     private LinkedList<MailBox> mailBoxes = new LinkedList<>();
     private MailStore mailStore;
+
+
+    private void readAnnotation(){
+        Annotation[] anot = MailSystem.class.getAnnotations();
+        String store = anot[0].toString();
+    }
 
     public MailSystem(MailStore mailStore) {
         this.mailStore = mailStore;
