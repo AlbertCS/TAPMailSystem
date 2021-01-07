@@ -1,6 +1,6 @@
 package Part3;
 
-import Part1.Comparator.MessageNewerComparator;
+import Part3.Comparator.MessageNewerComparator;
 import Part3.BaseClasses.*;
 import Part3.Comparator.UserNameComparator;
 import redis.clients.jedis.Jedis;
@@ -15,19 +15,16 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        /*Jedis jedis = new Jedis("localhost");
-        jedis.set("foo", "bar");
-        String value = jedis.get("foo");
-        System.out.println("\nTEST");
-        System.out.println("\nvalue = " + value);*/
-
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss ZZZ");
 
         System.out.println("MAIL STORE REDIS");
 
         // 1. Initialize
-        MailStoreRedis mailStore = MailStoreRedis.getInstance();
-        Part1.Comparator.MessageNewerComparator comparator = new MessageNewerComparator();
+        MailStoreFactory factory = new MailStoreFileFactory();
+
+        MailStore mailStore = factory.createMailStore();
+        //MailStoreRedis mailStore = MailStoreRedis.getInstance();
+        MessageNewerComparator comparator = new MessageNewerComparator();
 
         // Clean redis server
         mailStore.clearMailStore();

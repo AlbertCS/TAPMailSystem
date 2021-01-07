@@ -20,5 +20,6 @@ public interface MailStore {
      */
     public abstract void sendMail(Message message) throws IOException;
 
+    public abstract void clearMailStore() throws IOException;
 
 }
