@@ -24,12 +24,11 @@ public class MailStoreMem implements MailStore{
 
     @Override
     public void clearMailStore() throws IOException {
-
+        messages.clear();
     }
 
     @Override
     public LinkedList<Message> getMail(String username) {
-        //messages.stream().filter(message -> message.getReceiver().equalsIgnoreCase(username)).forEach(System.out::println);
         return messages.stream().filter(message -> message.getReceiver().equalsIgnoreCase(username)).collect(Collectors.toCollection(LinkedList::new));
     }
 
