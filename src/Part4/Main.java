@@ -2,13 +2,10 @@ package Part4;
 
 import Part4.BaseClasses.*;
 import Part4.Comparator.MessageNewerComparator;
-import Part4.Comparator.UserNameComparator;
+
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
-import java.util.List;
-import java.util.Map;
-import java.util.function.Predicate;
 
 public class Main {
 
@@ -17,7 +14,8 @@ public class Main {
         System.out.println("MAIL SYSTEM P4");
 
         // 1. Initialize
-        MailStore mailStore = new MailStoreMem();
+        MailStore mailStore = (MailStore) DynamicProxy.newInstance(new MailStoreMem()) ;
+
         MessageNewerComparator comparator = new MessageNewerComparator();
 
         // 2. Create users
