@@ -1,5 +1,10 @@
 package Part2Encoding.BaseClasses;
 
+
+
+import Part1.BaseClasses.Message;
+import Part1.BaseClasses.User;
+
 import javax.crypto.NoSuchPaddingException;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
@@ -13,15 +18,14 @@ import java.util.stream.Collectors;
  * @author Albert Cañellas and Laura Romero.
  * MailBox class
  */
+
 public class MailBox implements Iterable<Message> {
 
     private LinkedList<Message> receivedMessages = new LinkedList<>();
+    MailStore mailStore;
+    User user;
 
-    private MailStore mailStore;
-
-    private User user;
-
-    public MailBox(MailStore mailStore, User user) {
+    public MailBox(Part2Encoding.BaseClasses.MailStore mailStore, User user) {
         this.mailStore = mailStore;
         this.user = user;
     }
@@ -30,7 +34,6 @@ public class MailBox implements Iterable<Message> {
         System.out.println("\nUpdating messages...");
         receivedMessages = mailStore.getMail(user.getUserName()).stream().collect(Collectors.toCollection(LinkedList::new));
         Collections.sort(receivedMessages, comparator);
-
     }
 
     public void listMail() {
@@ -42,7 +45,7 @@ public class MailBox implements Iterable<Message> {
 
     public void sendMail(String subject, String body, String receiver) throws IOException, NoSuchPaddingException, NoSuchAlgorithmException {
         mailStore.sendMail(subject, body, user.getUserName(), receiver);
-        System.out.println("\nMail Decorator Send");
+        System.out.println("\nMail Send");
     }
 
     public void getMail(Comparator comparator){
@@ -50,6 +53,13 @@ public class MailBox implements Iterable<Message> {
         listMail();
     }
 
+    public void filterUserMail(String user2){
+        receivedMessages.stream().filter(message -> message.getSender().equals(user2)).forEach(System.out::println);
+    }
+
+    public void filterSubjectWord(String subject){
+        receivedMessages.stream().filter(message -> message.getSubject().contains(subject)).forEach(System.out::println);
+    }
 
     public LinkedList<Message> getReceivedMessages() {
         return receivedMessages;
@@ -64,21 +74,26 @@ public class MailBox implements Iterable<Message> {
         return new MessageIterator();
     }
 
+
     private class MessageIterator implements Iterator<Message> {
 
         int index;
 
         @Override
         public boolean hasNext() {
-            return index < receivedMessages.size();
+
+            if(index < receivedMessages.size()){
+                return true;
+            }
+            return false;
         }
 
         @Override
         public Message next() {
 
-            if(this.hasNext())
+            if(this.hasNext()){
                 return receivedMessages.get(index++);
-
+            }
             return null;
         }
     }

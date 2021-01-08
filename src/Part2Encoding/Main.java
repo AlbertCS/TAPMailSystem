@@ -1,8 +1,8 @@
 package Part2Encoding;
 
+
 import Part2Encoding.BaseClasses.*;
-import Part2Encoding.Comparator.MessageNewerComparator;
-import Part2Encoding.Comparator.UserNameComparator;
+import Part1.Comparator.MessageNewerComparator;
 import Part2Encoding.Decorator.EncryptDecorator;
 import Part2Encoding.Decorator.ReverseDecorator;
 

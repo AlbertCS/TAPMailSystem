@@ -1,8 +1,7 @@
 package Part2Encoding.Decorator;
 
+import Part1.BaseClasses.Message;
 import Part2Encoding.BaseClasses.MailStore;
-import Part2Encoding.BaseClasses.Message;
-import Part2Encoding.strategy.OperationEncrypt;
 import Part2Encoding.strategy.OperationReverse;
 import Part2Encoding.strategy.Strategy;
 
@@ -10,9 +9,8 @@ import javax.crypto.NoSuchPaddingException;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.util.LinkedList;
-import java.util.stream.Collectors;
 
-public class ReverseDecorator extends MailStore {
+public class ReverseDecorator implements MailStore {
     private MailStore mailStore;
     private Strategy reverse = new OperationReverse();
 

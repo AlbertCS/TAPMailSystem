@@ -1,5 +1,6 @@
 package Part2Encoding.BaseClasses;
 
+import Part1.BaseClasses.Message;
 import Part2Encoding.Decorator.ReverseDecorator;
 import Part2Encoding.strategy.OperationDecrypt;
 import Part2Encoding.strategy.OperationEncrypt;
@@ -18,7 +19,7 @@ import java.util.StringTokenizer;
  * @author Albert Cañellas and Laura Romero.
  * MailStoreFile class, the mailStore that saves to a file.
  */
-public class MailStoreFile extends MailStore {
+public class MailStoreFile implements MailStore {
 
     private File file = new File("mails.txt");
     private String fileName = "mails.txt";

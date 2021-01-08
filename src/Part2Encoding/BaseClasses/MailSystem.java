@@ -1,5 +1,12 @@
 package Part2Encoding.BaseClasses;
 
+
+
+
+import Part1.BaseClasses.CustomCollector;
+import Part1.BaseClasses.Message;
+import Part1.BaseClasses.User;
+
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
@@ -11,9 +18,9 @@ public class MailSystem {
 
     private LinkedList<User> users = new LinkedList<>();
     private LinkedList<MailBox> mailBoxes = new LinkedList<>();
-    private MailStore mailStore;
+    private Part2Encoding.BaseClasses.MailStore mailStore;
 
-    public MailSystem(MailStore mailStore) {
+    public MailSystem(Part2Encoding.BaseClasses.MailStore mailStore) {
         this.mailStore = mailStore;
     }
 
@@ -97,8 +104,5 @@ public class MailSystem {
         }
         return words;
     }
-
-
-
 
 }

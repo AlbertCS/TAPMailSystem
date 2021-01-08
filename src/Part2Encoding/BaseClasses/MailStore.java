@@ -1,5 +1,7 @@
 package Part2Encoding.BaseClasses;
 
+import Part1.BaseClasses.Message;
+
 import javax.crypto.NoSuchPaddingException;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
@@ -9,7 +11,7 @@ import java.util.LinkedList;
  * @author Albert Cañellas and Laura Romero.
  * MailStore class
  */
-public abstract class MailStore {
+public interface MailStore {
 
     /**
      * Retrieve all the messages that are intended for a certain user.

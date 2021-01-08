@@ -1,7 +1,7 @@
 package Part2Encoding.Decorator;
 
+import Part1.BaseClasses.Message;
 import Part2Encoding.BaseClasses.MailStore;
-import Part2Encoding.BaseClasses.Message;
 import Part2Encoding.strategy.OperationDecrypt;
 import Part2Encoding.strategy.OperationEncrypt;
 import Part2Encoding.strategy.Strategy;
@@ -10,9 +10,8 @@ import javax.crypto.NoSuchPaddingException;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.util.LinkedList;
-import java.util.stream.Collectors;
 
-public class EncryptDecorator extends MailStore {
+public class EncryptDecorator implements MailStore {
     private MailStore mailStore;
     private Strategy encrypt = new OperationEncrypt();
     private Strategy decrypt = new OperationDecrypt();
