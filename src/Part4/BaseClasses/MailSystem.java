@@ -7,11 +7,12 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Comparator;
 import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+/**
+ * @author Albert Cañellas and Laura Romero.
+ * MailSystem Part4 Class
+ */
 @Config(store = "Part1.BaseClasses.MailStoreMem", log = false)
 public class MailSystem {
 

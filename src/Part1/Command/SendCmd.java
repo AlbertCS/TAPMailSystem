@@ -6,6 +6,10 @@ import javax.crypto.NoSuchPaddingException;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * @author Albert Cañellas and Laura Romero.
+ * SendCmd Class
+ */
 public class SendCmd implements Command{
 
     private MailBox mailBox;

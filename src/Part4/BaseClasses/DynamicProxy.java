@@ -6,7 +6,8 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 /**
- * Created by milax on 20/10/15.
+ * @author Albert Cañellas and Laura Romero.
+ * DynamicProxy Class
  */
 public class DynamicProxy implements InvocationHandler {
     private Object target = null;

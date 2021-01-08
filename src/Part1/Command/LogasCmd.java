@@ -8,6 +8,10 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 import static java.lang.System.in;
 
+/**
+ * @author Albert Cañellas and Laura Romero.
+ * LogasCmd Class
+ */
 public class LogasCmd implements Command {
     private MailBox mailBox;
     private MailSystem mailSystem;

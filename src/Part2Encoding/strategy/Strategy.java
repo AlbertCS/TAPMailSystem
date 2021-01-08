@@ -1,9 +1,10 @@
 package Part2Encoding.strategy;
 
-import javax.crypto.NoSuchPaddingException;
-import java.security.NoSuchAlgorithmException;
 
-
+/**
+ * @author Albert Cañellas and Laura Romero.
+ * Strategy Interface
+ */
 public interface Strategy {
     String doOperation(String body);
 }

@@ -4,6 +4,10 @@ import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
 
+/**
+ * @author Albert Cañellas and Laura Romero.
+ * MailStoreTestRunner Class
+ */
 public class MailStoreTestRunner {
     public static void main(String[] args) {
         Result result = JUnitCore.runClasses(MailStoreTestSuite.class);

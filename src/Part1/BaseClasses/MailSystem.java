@@ -1,13 +1,15 @@
 package Part1.BaseClasses;
 
-import Part1.FunctionFilter;
+
 
 import java.util.*;
-import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
+/**
+ * @author Albert Cañellas and Laura Romero.
+ *  MailSystem Class
+ */
 public class MailSystem {
 
     private HashMap<User, MailBox> dictionary = new HashMap<>();

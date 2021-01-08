@@ -4,12 +4,9 @@ import Part1.BaseClasses.MailStore;
 import Part1.BaseClasses.Message;
 import redis.clients.jedis.Jedis;
 
-import java.io.*;
-import java.text.SimpleDateFormat;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Locale;
-import java.util.StringTokenizer;
+
 
 /**
  * @author Albert Cañellas and Laura Romero.

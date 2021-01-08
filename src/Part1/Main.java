@@ -12,6 +12,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
 
+/**
+ * @author Albert Cañellas and Laura Romero.
+ * Main Part1
+ */
 public class Main {
 
     public static void main(String[] args) throws IOException, NoSuchAlgorithmException, NoSuchPaddingException {

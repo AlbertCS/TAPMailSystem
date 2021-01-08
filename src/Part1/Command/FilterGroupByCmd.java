@@ -8,6 +8,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * @author Albert Cañellas and Laura Romero.
+ * FilerGroupBy Class
+ */
 public class FilterGroupByCmd implements Command{
 
     private MailSystem mailSystem;

@@ -4,14 +4,19 @@ import Part1.BaseClasses.MailBox;
 import Part1.BaseClasses.MailStore;
 import Part1.BaseClasses.MailSystem;
 import Part1.Comparator.MessageNewerComparator;
-import Part3.BaseClasses.*;
 import Part3.Factory.MailStoreFactory;
+import Part3.Factory.MailStoreFileFactory;
+import Part3.Factory.MailStoreMemFactory;
 import Part3.Factory.MailStoreRedisFactory;
 
 import javax.crypto.NoSuchPaddingException;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * @author Albert Cañellas and Laura Romero.
+ * Main Part3
+ */
 public class Main {
 
     public static void main(String[] args) throws IOException, NoSuchAlgorithmException, NoSuchPaddingException {

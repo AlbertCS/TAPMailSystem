@@ -5,7 +5,6 @@ import Part1.BaseClasses.MailStoreMem;
 import Part2.BaseClasses.MailSystem;
 import Part2.BaseClasses.MailBox;
 import Part1.Comparator.MessageNewerComparator;
-import Part1.Comparator.UserNameComparator;
 import Part2.observer.SpamUserFilter;
 import Part2.observer.TooLongFilter;
 
@@ -13,7 +12,10 @@ import javax.crypto.NoSuchPaddingException;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 
-
+/**
+ * @author Albert Cañellas and Laura Romero.
+ * Main Part2
+ */
 public class Main {
     //Main part 2
 

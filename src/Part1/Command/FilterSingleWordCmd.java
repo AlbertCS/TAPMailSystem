@@ -1,13 +1,13 @@
 package Part1.Command;
 
 import Part1.BaseClasses.MailSystem;
-import Part1.BaseClasses.Message;
-
 import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * @author Albert Cañellas and Laura Romero.
+ * FilterSingleWordCmd Class
+ */
 public class FilterSingleWordCmd implements Command{
 
     private MailSystem mailSystem;

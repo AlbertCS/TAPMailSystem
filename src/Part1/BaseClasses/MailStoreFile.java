@@ -1,9 +1,7 @@
 package Part1.BaseClasses;
 
 import java.io.*;
-import java.text.SimpleDateFormat;
 import java.util.LinkedList;
-import java.util.Locale;
 import java.util.StringTokenizer;
 
 /**
@@ -37,7 +35,6 @@ public class MailStoreFile implements MailStore{
     @Override
     public  LinkedList<Message> getMail(String username) {
         String line;
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss ZZZ", Locale.getDefault());
         LinkedList<Message> receivedMessages = new LinkedList<>();
         try {
             BufferedReader reader = new BufferedReader(new FileReader(fileName));

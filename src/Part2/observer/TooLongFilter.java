@@ -7,6 +7,10 @@ import java.util.LinkedList;
 
 import java.util.stream.Collectors;
 
+/**
+ * @author Albert Cañellas and Laura Romero.
+ * TooLongFilter Class
+ */
 public class TooLongFilter extends MailFilter {
 
     @Override

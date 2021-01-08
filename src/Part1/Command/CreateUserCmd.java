@@ -1,13 +1,14 @@
 package Part1.Command;
 
 
-import Part1.BaseClasses.MailBox;
 import Part1.BaseClasses.MailStore;
 import Part1.BaseClasses.MailSystem;
 
-import java.util.LinkedList;
-import java.util.StringTokenizer;
 
+/**
+ * @author Albert Cañellas and Laura Romero.
+ * CreateUserCmd class
+ */
 public class CreateUserCmd implements Command {
 
     private String userName;

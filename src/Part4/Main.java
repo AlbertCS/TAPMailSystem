@@ -3,14 +3,17 @@ package Part4;
 import Part1.BaseClasses.MailBox;
 import Part4.BaseClasses.MailSystem;
 import Part1.Comparator.MessageNewerComparator;
-import Part4.BaseClasses.*;
-
 
 import javax.crypto.NoSuchPaddingException;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.security.NoSuchAlgorithmException;
 
+
+/**
+ * @author Albert Cañellas and Laura Romero.
+ * Main Part4
+ */
 public class Main {
 
     public static void main(String[] args) throws IOException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, ClassNotFoundException, InstantiationException, NoSuchAlgorithmException, NoSuchPaddingException {

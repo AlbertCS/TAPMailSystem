@@ -4,6 +4,10 @@ import Part1.BaseClasses.Message;
 
 import java.util.Comparator;
 
+/**
+ * @author Albert Cañellas and Laura Romero.
+ * UserNameComparator Class
+ */
 public class UserNameComparator implements Comparator<Message> {
     @Override
     public int compare(Message o1, Message o2) {

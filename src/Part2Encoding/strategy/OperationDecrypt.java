@@ -5,7 +5,10 @@ import javax.crypto.NoSuchPaddingException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 
-
+/**
+ * @author Albert Cañellas and Laura Romero.
+ * OperationDecrypt Class
+ */
 public class OperationDecrypt implements Strategy{
     @Override
     public String doOperation(String body) {

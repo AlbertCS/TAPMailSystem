@@ -5,7 +5,6 @@ import Part1.BaseClasses.MailStore;
 import Part1.BaseClasses.MailStoreMem;
 import Part1.BaseClasses.MailSystem;
 import Part1.Comparator.MessageNewerComparator;
-import Part1.Comparator.UserNameComparator;
 
 import javax.crypto.NoSuchPaddingException;
 import java.io.BufferedReader;
@@ -16,8 +15,11 @@ import java.util.LinkedList;
 import java.util.StringTokenizer;
 
 import static java.lang.System.in;
-import static java.lang.System.setOut;
 
+/**
+ * @author Albert Cañellas and Laura Romero.
+ * MainCLI Class
+ */
 public class MainCLI {
 
     public static void main(String[] args) throws IOException, NoSuchAlgorithmException, NoSuchPaddingException {

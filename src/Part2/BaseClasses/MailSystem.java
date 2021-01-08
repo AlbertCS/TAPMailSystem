@@ -6,6 +6,10 @@ import Part1.BaseClasses.User;
 import java.util.LinkedList;
 import java.util.stream.Collectors;
 
+/**
+ * @author Albert Cañellas and Laura Romero.
+ * MailSystem Part2 Class
+ */
 public class MailSystem {
 
     private LinkedList<User> users = new LinkedList<>();

@@ -3,6 +3,10 @@ package Part1.Command;
 import Part1.BaseClasses.MailBox;
 import Part1.Comparator.MessageNewerComparator;
 
+/**
+ * @author Albert Cañellas and Laura Romero.
+ * UpdateCmd Class
+ */
 public class UpdateCmd implements Command{
 
     MailBox mailBox;

@@ -12,6 +12,10 @@ import java.security.NoSuchAlgorithmException;
 import java.util.LinkedList;
 import java.util.stream.Collectors;
 
+/**
+ * @author Albert Cañellas and Laura Romero.
+ * EncryptDecorator Class
+ */
 public class EncryptDecorator implements MailStore {
     private MailStore mailStore;
     private Strategy encrypt = new OperationEncrypt();

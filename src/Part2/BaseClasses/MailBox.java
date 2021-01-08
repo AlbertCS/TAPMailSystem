@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 
 /**
  * @author Albert Cañellas and Laura Romero.
- * MailBox class
+ * MailBox Part2 class
  */
 public class MailBox extends Part1.BaseClasses.MailBox implements Iterable<Message> {
 

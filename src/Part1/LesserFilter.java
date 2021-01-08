@@ -1,5 +1,9 @@
 package Part1;
 
+/**
+ * @author Albert Cañellas and Laura Romero.
+ * LesserFilter Class
+ */
 public class LesserFilter extends FunctionFilter {
 
 

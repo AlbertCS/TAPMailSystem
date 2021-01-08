@@ -2,19 +2,20 @@ package Part2Encoding;
 
 
 import Part1.BaseClasses.*;
-
 import Part1.Comparator.MessageNewerComparator;
 import Part2Encoding.Decorator.EncryptDecorator;
 import Part2Encoding.Decorator.ReverseDecorator;
 
-
 import javax.crypto.NoSuchPaddingException;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
-import java.text.SimpleDateFormat;
 
+
+/**
+ * @author Albert Cañellas and Laura Romero.
+ * Main Part2 Encoding
+ */
 public class Main {
-    //Main part 2
 
     public static void main(String[] args) throws IOException, NoSuchAlgorithmException, NoSuchPaddingException {
 

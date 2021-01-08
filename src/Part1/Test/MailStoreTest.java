@@ -11,6 +11,10 @@ import Part1.BaseClasses.Message;
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * @author Albert Cañellas and Laura Romero.
+ * MailStore Test Class
+ */
 public class MailStoreTest {
 
 

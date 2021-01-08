@@ -8,6 +8,10 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.Locale;
 
+/**
+ * @author Albert Cañellas and Laura Romero.
+ * MessageOlderComparator Class
+ */
 public class MessageOlderComparator implements Comparator<Message> {
     @Override
     public int compare(Message o1, Message o2) {

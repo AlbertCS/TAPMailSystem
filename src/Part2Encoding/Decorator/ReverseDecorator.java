@@ -11,6 +11,10 @@ import java.security.NoSuchAlgorithmException;
 import java.util.LinkedList;
 import java.util.stream.Collectors;
 
+/**
+ * @author Albert Cañellas and Laura Romero.
+ * ReverseDecorator Class
+ */
 public class ReverseDecorator implements MailStore {
     private MailStore mailStore;
     private Strategy reverse = new OperationReverse();
