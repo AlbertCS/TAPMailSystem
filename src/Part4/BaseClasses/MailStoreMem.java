@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
  * @author Albert Cañellas and Laura Romero.
  * MailStoreMem class, the mailStore that saves to memory.
  */
-public class MailStoreMem extends MailStore {
+public class MailStoreMem implements MailStore {
 
     List<Message> messages = new LinkedList<>();
 

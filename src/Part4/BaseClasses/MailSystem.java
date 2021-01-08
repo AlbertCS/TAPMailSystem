@@ -30,7 +30,10 @@ public class MailSystem {
             store = (String) methods[1].invoke(annotation, (Object[])null);
         }
         Class<?> aClass = Class.forName(store);
-        this.mailStore = (MailStore) aClass.getDeclaredConstructor().newInstance();
+        if(log)
+            this.mailStore = (MailStore) DynamicProxy.newInstance(aClass.getDeclaredConstructor().newInstance());
+        else
+            this.mailStore = (MailStore) aClass.getDeclaredConstructor().newInstance();
 
     }
 

@@ -14,7 +14,6 @@ public class Main {
         System.out.println("MAIL SYSTEM P4");
 
         // 1. Initialize
-        MailStore mailStore = (MailStore) DynamicProxy.newInstance(new MailStoreMem()) ;
 
         MessageNewerComparator comparator = new MessageNewerComparator();
 
