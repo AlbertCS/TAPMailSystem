@@ -5,5 +5,5 @@ import java.security.NoSuchAlgorithmException;
 
 
 public interface Strategy {
-    String doOperation(String body) throws NoSuchPaddingException, NoSuchAlgorithmException;
+    String doOperation(String body);
 }

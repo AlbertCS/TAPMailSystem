@@ -10,6 +10,7 @@ import javax.crypto.NoSuchPaddingException;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.util.LinkedList;
+import java.util.stream.Collectors;
 
 public class EncryptDecorator implements MailStore {
     private MailStore mailStore;
@@ -23,8 +24,8 @@ public class EncryptDecorator implements MailStore {
 
     @Override
     public LinkedList<Message> getMail(String username) {
-        //return mailStore.getMail(username).stream().map(m -> decrypt.doOperation(m.getBody())).collect(Collectors.toCollection(LinkedList::new));
-        return mailStore.getMail(username);
+        return mailStore.getMail(username).stream().map(m -> new Message(m.getSubject(), decrypt.doOperation(m.getBody()), m.getSender(), m.getReceiver()) ).collect(Collectors.toCollection(LinkedList::new));
+        //return mailStore.getMail(username);
     }
 
     @Override

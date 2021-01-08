@@ -21,7 +21,7 @@ public class Main {
         System.out.println("MAIL SYSTEM P2Encoding");
 
         // 1. Initialize
-        MailStore mailStore = new EncryptDecorator( new ReverseDecorator(new MailStoreFile()));
+        MailStore mailStore = new EncryptDecorator(new ReverseDecorator(new MailStoreFile()));
         mailStore.clearTheFile();
         MessageNewerComparator comparator = new MessageNewerComparator();
 

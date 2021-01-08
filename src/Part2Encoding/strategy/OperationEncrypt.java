@@ -8,11 +8,18 @@ import java.util.Base64;
 
 public class OperationEncrypt implements Strategy{
     @Override
-    public String doOperation(String body) throws NoSuchPaddingException, NoSuchAlgorithmException {
+    public String doOperation(String body) {
         String key = "IWantToPassTAP12"; // 128 bit key
         java.security.Key aesKey =
                 new javax.crypto.spec.SecretKeySpec(key.getBytes(), "AES");
-        Cipher cipher = Cipher.getInstance("AES");
+        Cipher cipher = null;
+        try {
+            cipher = Cipher.getInstance("AES");
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (NoSuchPaddingException e) {
+            e.printStackTrace();
+        }
 
         byte[] encrypted = new byte[0];
         try {
