@@ -2,7 +2,7 @@ package Part2;
 
 import Part1.BaseClasses.MailStore;
 import Part1.BaseClasses.MailStoreMem;
-import Part1.BaseClasses.MailSystem;
+import Part2.BaseClasses.MailSystem;
 import Part2.BaseClasses.MailBox;
 import Part1.Comparator.MessageNewerComparator;
 import Part1.Comparator.UserNameComparator;

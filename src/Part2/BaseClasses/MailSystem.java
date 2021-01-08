@@ -2,6 +2,7 @@ package Part2.BaseClasses;
 
 
 import Part1.BaseClasses.CustomCollector;
+import Part2.BaseClasses.MailBox;
 import Part1.BaseClasses.MailStore;
 import Part1.BaseClasses.Message;
 import Part1.BaseClasses.User;
@@ -16,16 +17,16 @@ import java.util.stream.Collectors;
 public class MailSystem {
 
     private LinkedList<User> users = new LinkedList<>();
-    private LinkedList<Part1.BaseClasses.MailBox> mailBoxes = new LinkedList<>();
+    private LinkedList<Part2.BaseClasses.MailBox> mailBoxes = new LinkedList<>();
     private MailStore mailStore;
 
     public MailSystem(MailStore mailStore) {
         this.mailStore = mailStore;
     }
 
-    public Part1.BaseClasses.MailBox createUser(String userName, String name, int birthYear){
+    public Part2.BaseClasses.MailBox createUser(String userName, String name, int birthYear){
         User user = new User(userName, name, birthYear);
-        Part1.BaseClasses.MailBox mailBox = new Part1.BaseClasses.MailBox(mailStore, user);
+        Part2.BaseClasses.MailBox mailBox = new Part2.BaseClasses.MailBox(mailStore, user);
         users.add(user);
         mailBoxes.add(mailBox);
         return mailBox;
@@ -95,7 +96,7 @@ public class MailSystem {
 
     public int countWords(String userName){
         LinkedList<Message> messages =
-                mailBoxes.stream().map(MailBox::getReceivedMessages).flatMap(l -> l.stream())
+                mailBoxes.stream().map(MailBox::getReceivedMessages ).flatMap(l -> l.stream())
                         .filter(message -> message.getSender().equalsIgnoreCase(userName)).collect(Collectors.toCollection(LinkedList::new));
         int words=0;
         for(Message message:messages){
