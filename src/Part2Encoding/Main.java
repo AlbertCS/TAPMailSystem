@@ -4,6 +4,7 @@ import Part2Encoding.BaseClasses.*;
 import Part2Encoding.Comparator.MessageNewerComparator;
 import Part2Encoding.Comparator.UserNameComparator;
 import Part2Encoding.Decorator.EncryptDecorator;
+import Part2Encoding.Decorator.ReverseDecorator;
 
 
 import javax.crypto.NoSuchPaddingException;
@@ -14,12 +15,12 @@ import java.text.SimpleDateFormat;
 public class Main {
     //Main part 2
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, NoSuchAlgorithmException, NoSuchPaddingException {
 
         System.out.println("MAIL SYSTEM P2Encoding");
 
         // 1. Initialize
-        MailStore mailStore = new EncryptDecorator(new MailStoreFile()) ;
+        MailStore mailStore = new EncryptDecorator( new ReverseDecorator(new MailStoreFile()));
         mailStore.clearTheFile();
         MessageNewerComparator comparator = new MessageNewerComparator();
 

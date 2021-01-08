@@ -70,16 +70,12 @@ public class MailStoreFile extends MailStore {
                     String receiver = tokens.nextToken();
                     String dateSend = tokens.nextToken();
                     if(receiver.equalsIgnoreCase(username)){
-                        receivedMessages.add(new ReverseDecorator(subject, body, sender, receiver, dateSend, strategyD, strategyR));
+                        receivedMessages.add(new Message(subject, body, sender, receiver, dateSend));
                     }
                 }
             }
         }catch (IOException s){
             System.out.println("Error: "+s);
-        } catch (NoSuchPaddingException e) {
-            e.printStackTrace();
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
         }
         return receivedMessages;
     }

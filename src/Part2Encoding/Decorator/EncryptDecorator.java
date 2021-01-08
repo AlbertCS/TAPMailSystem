@@ -24,7 +24,8 @@ public class EncryptDecorator extends MailStore {
 
     @Override
     public LinkedList<Message> getMail(String username) {
-        return mailStore.getMail(username).stream().map(m -> decrypt.doOperation(m.getBody())).collect(Collectors.toCollection(LinkedList::new));
+        //return mailStore.getMail(username).stream().map(m -> decrypt.doOperation(m.getBody())).collect(Collectors.toCollection(LinkedList::new));
+        return mailStore.getMail(username);
     }
 
     @Override
