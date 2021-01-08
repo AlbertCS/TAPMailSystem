@@ -3,10 +3,7 @@ package Part2.BaseClasses;
 import Part1.BaseClasses.User;
 import Part2.observer.MailFilter;
 import Part1.BaseClasses.Message;
-
 import Part1.BaseClasses.MailStore;
-
-
 import javax.crypto.NoSuchPaddingException;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
