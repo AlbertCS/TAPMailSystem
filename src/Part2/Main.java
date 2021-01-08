@@ -1,17 +1,16 @@
 package Part2;
 
-import Part2.BaseClasses.*;
-import Part2.Comparator.MessageNewerComparator;
-import Part2.Comparator.UserNameComparator;
+import Part1.BaseClasses.MailStore;
+import Part1.BaseClasses.MailStoreMem;
+import Part1.BaseClasses.MailSystem;
+import Part2.BaseClasses.MailBox;
+import Part1.Comparator.MessageNewerComparator;
+import Part1.Comparator.UserNameComparator;
 import Part2.observer.SpamUserFilter;
 import Part2.observer.TooLongFilter;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.function.Predicate;
+
 
 public class Main {
     //Main part 2
@@ -26,7 +25,7 @@ public class Main {
 
         // 2. Create users
         MailSystem mailSystem = new MailSystem(mailStore);
-        MailBox mailBoxLaura =  mailSystem.createUser("LauraRH", "Laura", 1997);
+        MailBox mailBoxLaura = mailSystem.createUser("LauraRH", "Laura", 1997);
         MailBox mailBoxAlbert = mailSystem.createUser("AlbertCS", "Albert", 1997);
         MailBox mailBoxKoala = mailSystem.createUser("Koala spam", "Laura", 2001);
 

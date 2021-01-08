@@ -1,6 +1,11 @@
 package Part2.BaseClasses;
 
+import Part1.BaseClasses.User;
 import Part2.observer.MailFilter;
+import Part1.BaseClasses.Message;
+
+import Part1.BaseClasses.MailStore;
+
 
 import java.io.IOException;
 import java.util.*;
@@ -10,10 +15,10 @@ import java.util.stream.Collectors;
  * @author Albert Cañellas and Laura Romero.
  * MailBox class
  */
-public class MailBox implements Iterable<Message> {
+public class MailBox extends Part1.BaseClasses.MailBox implements Iterable<Message> {
 
-    private LinkedList<Message> receivedMessages = new LinkedList<>();
-    private LinkedList<Message> spamMessages = new LinkedList<>();
+    private LinkedList<Part1.BaseClasses.Message> receivedMessages = new LinkedList<>();
+    private LinkedList<Part1.BaseClasses.Message> spamMessages = new LinkedList<>();
     private LinkedList<MailFilter> mailFilters = new LinkedList<>();
 
 
@@ -22,6 +27,7 @@ public class MailBox implements Iterable<Message> {
     private User user;
 
     public MailBox(MailStore mailStore, User user) {
+        super(mailStore, user);
         this.mailStore = mailStore;
         this.user = user;
     }

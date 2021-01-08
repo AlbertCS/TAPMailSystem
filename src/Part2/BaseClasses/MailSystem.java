@@ -1,5 +1,11 @@
 package Part2.BaseClasses;
 
+
+import Part1.BaseClasses.CustomCollector;
+import Part1.BaseClasses.MailStore;
+import Part1.BaseClasses.Message;
+import Part1.BaseClasses.User;
+
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
@@ -10,16 +16,16 @@ import java.util.stream.Collectors;
 public class MailSystem {
 
     private LinkedList<User> users = new LinkedList<>();
-    private LinkedList<MailBox> mailBoxes = new LinkedList<>();
+    private LinkedList<Part1.BaseClasses.MailBox> mailBoxes = new LinkedList<>();
     private MailStore mailStore;
 
     public MailSystem(MailStore mailStore) {
         this.mailStore = mailStore;
     }
 
-    public MailBox createUser(String userName, String name, int birthYear){
+    public Part1.BaseClasses.MailBox createUser(String userName, String name, int birthYear){
         User user = new User(userName, name, birthYear);
-        MailBox mailBox = new MailBox(mailStore, user);
+        Part1.BaseClasses.MailBox mailBox = new Part1.BaseClasses.MailBox(mailStore, user);
         users.add(user);
         mailBoxes.add(mailBox);
         return mailBox;
@@ -29,7 +35,7 @@ public class MailSystem {
         return mailBoxes.stream().anyMatch(mailBox -> mailBox.getUser().getUserName().equals(userName));
     }
 
-    public MailBox getMailBox(String userName){
+    public Part1.BaseClasses.MailBox getMailBox(String userName){
         return mailBoxes.stream().filter(mailBox -> mailBox.getUser().getUserName().equals(userName)).collect(CustomCollector.toSingleton());
     }
 
@@ -38,7 +44,7 @@ public class MailSystem {
     }
 
     public void getAllMessages(){
-        mailBoxes.stream().forEach(MailBox::listMail);
+        mailBoxes.stream().forEach(Part1.BaseClasses.MailBox::listMail);
     }
 
     public void getAllUsers(){
@@ -48,7 +54,7 @@ public class MailSystem {
 
     public LinkedList<Message> filterAllMessagesSingleWord(){
         LinkedList<Message> messages =
-                mailBoxes.stream().map(MailBox::getReceivedMessages).flatMap(l -> l.stream()).collect(Collectors.toCollection(LinkedList::new));
+                mailBoxes.stream().map(Part1.BaseClasses.MailBox::getReceivedMessages).flatMap(l -> l.stream()).collect(Collectors.toCollection(LinkedList::new));
         return messages.stream().filter(message -> message.getSubject().split("\\w+").length == 0).collect(Collectors.toCollection(LinkedList::new));
     }
 
@@ -57,7 +63,7 @@ public class MailSystem {
     public LinkedList<Message> filterAllMessagesYear(Predicate predicate){
 
         LinkedList<Message> messages =
-                mailBoxes.stream().map(MailBox::getReceivedMessages).flatMap(l -> l.stream()).collect(Collectors.toCollection(LinkedList::new));
+                mailBoxes.stream().map(Part1.BaseClasses.MailBox::getReceivedMessages).flatMap(l -> l.stream()).collect(Collectors.toCollection(LinkedList::new));
         LinkedList<User> users2000 =
                 (LinkedList<User>) users.stream().filter(predicate).collect(Collectors.toCollection(LinkedList::new));
         //users.stream().filter( user -> user.getBirthYear() > 2000).collect(Collectors.toCollection(LinkedList::new));
@@ -69,18 +75,18 @@ public class MailSystem {
     }
 
     public void countMessages(){
-        long num = mailBoxes.stream().map(MailBox::getReceivedMessages).flatMap(l -> l.stream()).count();
+        long num = mailBoxes.stream().map(Part1.BaseClasses.MailBox::getReceivedMessages).flatMap(l -> l.stream()).count();
         System.out.println("\nThe total number of messages is " +num);
     }
 
     public  void  avgMessages(){
-        long num = mailBoxes.stream().map(MailBox::getReceivedMessages).flatMap(l -> l.stream()).count();
+        long num = mailBoxes.stream().map(Part1.BaseClasses.MailBox::getReceivedMessages).flatMap(l -> l.stream()).count();
         System.out.println("\nThe average of messages is " +(num/ users.size()));
     }
 
     public Map<String, List<Message>> grupSubject(){
         LinkedList<Message> messages =
-                mailBoxes.stream().map(MailBox::getReceivedMessages).flatMap(l -> l.stream()).collect(Collectors.toCollection(LinkedList::new));
+                mailBoxes.stream().map(Part1.BaseClasses.MailBox::getReceivedMessages).flatMap(l -> l.stream()).collect(Collectors.toCollection(LinkedList::new));
         Map<String, List<Message>> bySubject
                 = messages.stream()
                 .collect(Collectors.groupingBy(Message::getSubject));
@@ -97,8 +103,5 @@ public class MailSystem {
         }
         return words;
     }
-
-
-
 
 }

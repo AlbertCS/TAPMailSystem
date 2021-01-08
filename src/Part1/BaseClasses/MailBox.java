@@ -1,7 +1,5 @@
 package Part1.BaseClasses;
 
-import Part2.observer.SpamUserFilter;
-
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Comparator;
@@ -13,6 +11,7 @@ import java.util.stream.Collectors;
  * @author Albert Cañellas and Laura Romero.
  * MailBox class
  */
+
 public class MailBox implements Iterable<Message> {
 
     private LinkedList<Message> receivedMessages = new LinkedList<>();
