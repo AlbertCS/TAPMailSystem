@@ -23,7 +23,7 @@ public class MailStoreMem implements MailStore{
     }
 
     @Override
-    public void clearTheFile() throws IOException {
+    public void clearMailStore() throws IOException {
 
     }
 

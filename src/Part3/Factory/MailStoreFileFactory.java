@@ -1,7 +1,7 @@
 package Part3.Factory;
 
-import Part3.BaseClasses.MailStore;
-import Part3.BaseClasses.MailStoreFile;
+import Part1.BaseClasses.MailStore;
+import Part1.BaseClasses.MailStoreFile;
 
 public class MailStoreFileFactory implements MailStoreFactory {
     @Override

@@ -34,7 +34,7 @@ public class EncryptDecorator implements MailStore {
     }
 
     @Override
-    public void clearTheFile() throws IOException {
-        mailStore.clearTheFile();
+    public void clearMailStore() throws IOException {
+        mailStore.clearMailStore();
     }
 }

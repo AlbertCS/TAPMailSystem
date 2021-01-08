@@ -60,7 +60,7 @@ public class MailStoreFile implements MailStore{
         return receivedMessages;
     }
 
-    public void clearTheFile() throws IOException {
+    public void clearMailStore() throws IOException {
         FileWriter fwOb = new FileWriter("mails.txt", false);
         PrintWriter pwOb = new PrintWriter(fwOb, false);
         pwOb.flush();

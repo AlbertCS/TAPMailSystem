@@ -1,7 +1,7 @@
 package Part4;
 
+import Part1.Comparator.MessageNewerComparator;
 import Part4.BaseClasses.*;
-import Part4.Comparator.MessageNewerComparator;
 
 
 import java.io.IOException;

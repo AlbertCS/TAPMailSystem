@@ -22,7 +22,6 @@ public interface MailStore {
      */
     public abstract void sendMail(Message message) throws IOException, NoSuchAlgorithmException, NoSuchPaddingException;
 
-    public abstract void clearTheFile() throws IOException;
 
-
+    void clearMailStore() throws IOException;
 }

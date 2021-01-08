@@ -1,5 +1,7 @@
 package Part3.BaseClasses;
 
+import Part1.BaseClasses.MailStore;
+import Part1.BaseClasses.Message;
 import redis.clients.jedis.Jedis;
 
 import java.io.*;
@@ -34,7 +36,7 @@ public class MailStoreRedis implements MailStore {
     }
 
     @Override
-    public void sendMail(Message message) throws IOException {
+    public void sendMail(Message message) {
             jedis.lpush(message.getReceiver(), message.toString());
     }
 

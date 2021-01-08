@@ -22,7 +22,7 @@ public class Main {
 
         // 1. Initialize
         MailStore mailStore = new EncryptDecorator(new ReverseDecorator(new MailStoreFile()));
-        mailStore.clearTheFile();
+        mailStore.clearMailStore();
         MessageNewerComparator comparator = new MessageNewerComparator();
 
         // 2. Create users
