@@ -9,13 +9,15 @@ import Part1.Comparator.UserNameComparator;
 import Part2.observer.SpamUserFilter;
 import Part2.observer.TooLongFilter;
 
+import javax.crypto.NoSuchPaddingException;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 
 
 public class Main {
     //Main part 2
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, NoSuchAlgorithmException, NoSuchPaddingException {
 
         System.out.println("MAIL SYSTEM P2");
 

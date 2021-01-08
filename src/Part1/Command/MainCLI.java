@@ -7,9 +7,11 @@ import Part1.BaseClasses.MailSystem;
 import Part1.Comparator.MessageNewerComparator;
 import Part1.Comparator.UserNameComparator;
 
+import javax.crypto.NoSuchPaddingException;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.security.NoSuchAlgorithmException;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
 
@@ -18,7 +20,7 @@ import static java.lang.System.setOut;
 
 public class MainCLI {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, NoSuchAlgorithmException, NoSuchPaddingException {
 
 
         // 1. Initialize

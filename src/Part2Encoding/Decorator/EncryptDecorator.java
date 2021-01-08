@@ -1,7 +1,7 @@
 package Part2Encoding.Decorator;
 
+import Part1.BaseClasses.MailStore;
 import Part1.BaseClasses.Message;
-import Part2Encoding.BaseClasses.MailStore;
 import Part2Encoding.strategy.OperationDecrypt;
 import Part2Encoding.strategy.OperationEncrypt;
 import Part2Encoding.strategy.Strategy;
@@ -28,8 +28,8 @@ public class EncryptDecorator implements MailStore {
     }
 
     @Override
-    public void sendMail(String subject, String body, String userName, String receiver) throws IOException, NoSuchAlgorithmException, NoSuchPaddingException {
-        mailStore.sendMail(subject, encrypt.doOperation(body), userName, receiver);
+    public void sendMail(Message message) throws IOException, NoSuchAlgorithmException, NoSuchPaddingException {
+        mailStore.sendMail(new Message(message.getSubject(), encrypt.doOperation(message.getBody()), message.getSender(), message.getReceiver()));
     }
 
     @Override

@@ -1,7 +1,7 @@
 package Part2Encoding.Decorator;
 
+import Part1.BaseClasses.MailStore;
 import Part1.BaseClasses.Message;
-import Part2Encoding.BaseClasses.MailStore;
 import Part2Encoding.strategy.OperationReverse;
 import Part2Encoding.strategy.Strategy;
 
@@ -27,9 +27,8 @@ public class ReverseDecorator implements MailStore {
     }
 
     @Override
-    public void sendMail(String subject, String body, String userName, String receiver) throws IOException, NoSuchAlgorithmException, NoSuchPaddingException {
-        mailStore.sendMail(subject, reverse.doOperation(body), userName, receiver);
-
+    public void sendMail(Message message) throws IOException, NoSuchPaddingException, NoSuchAlgorithmException {
+        mailStore.sendMail(new Message(message.getSubject(), reverse.doOperation(message.getBody()), message.getSender(), message.getReceiver()));
     }
 
     @Override

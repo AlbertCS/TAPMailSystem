@@ -4,7 +4,9 @@ import Part1.BaseClasses.*;
 import Part1.Comparator.*;
 
 
+import javax.crypto.NoSuchPaddingException;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Map;
@@ -12,7 +14,7 @@ import java.util.function.Predicate;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, NoSuchAlgorithmException, NoSuchPaddingException {
 
         System.out.println("MAIL SYSTEM P1");
 

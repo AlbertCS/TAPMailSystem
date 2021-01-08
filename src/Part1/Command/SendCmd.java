@@ -2,7 +2,9 @@ package Part1.Command;
 
 import Part1.BaseClasses.MailBox;
 
+import javax.crypto.NoSuchPaddingException;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 
 public class SendCmd implements Command{
 
@@ -22,7 +24,7 @@ public class SendCmd implements Command{
     public void execute() {
         try {
             mailBox.sendMail(subject, body, receiver);
-        } catch (IOException e) {
+        } catch (IOException | NoSuchPaddingException | NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
     }

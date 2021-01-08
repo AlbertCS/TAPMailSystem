@@ -7,7 +7,9 @@ import Part1.BaseClasses.Message;
 import Part1.BaseClasses.MailStore;
 
 
+import javax.crypto.NoSuchPaddingException;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -64,7 +66,7 @@ public class MailBox extends Part1.BaseClasses.MailBox implements Iterable<Messa
         }
     }
 
-    public void sendMail(String subject, String body, String receiver) throws IOException {
+    public void sendMail(String subject, String body, String receiver) throws IOException, NoSuchPaddingException, NoSuchAlgorithmException {
         mailStore.sendMail(new Message(subject, body, user.getUserName(), receiver));
         System.out.println("\nMail Send");
     }
