@@ -1,7 +1,6 @@
 package Part2Encoding.BaseClasses;
 
-import Part2Encoding.Decorator.DecryptDecorator;
-import Part2Encoding.Decorator.EncryptDecorator;
+import Part2Encoding.Decorator.ReverseDecorator;
 import Part2Encoding.strategy.OperationDecrypt;
 import Part2Encoding.strategy.OperationEncrypt;
 import Part2Encoding.strategy.OperationReverse;
@@ -46,15 +45,11 @@ public class MailStoreFile extends MailStore {
     public void sendMail(String subject, String body, String userName, String receiver) throws IOException {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
-            Message message = new EncryptDecorator(subject,  body,  userName,  receiver, strategyR, strategyE);
+            Message message = new Message(subject,  body,  userName,  receiver);
             writer.append(message.saveFile());
             writer.close();
         }catch (IOException s){
             System.out.println("Error: "+s);
-        } catch (NoSuchPaddingException e) {
-            e.printStackTrace();
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
         }
     }
 
@@ -75,7 +70,7 @@ public class MailStoreFile extends MailStore {
                     String receiver = tokens.nextToken();
                     String dateSend = tokens.nextToken();
                     if(receiver.equalsIgnoreCase(username)){
-                        receivedMessages.add(new DecryptDecorator(subject, body, sender, receiver, dateSend, strategyD, strategyR));
+                        receivedMessages.add(new ReverseDecorator(subject, body, sender, receiver, dateSend, strategyD, strategyR));
                     }
                 }
             }

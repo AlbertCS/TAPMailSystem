@@ -3,6 +3,7 @@ package Part2Encoding;
 import Part2Encoding.BaseClasses.*;
 import Part2Encoding.Comparator.MessageNewerComparator;
 import Part2Encoding.Comparator.UserNameComparator;
+import Part2Encoding.Decorator.EncryptDecorator;
 
 
 import javax.crypto.NoSuchPaddingException;
@@ -18,7 +19,7 @@ public class Main {
         System.out.println("MAIL SYSTEM P2Encoding");
 
         // 1. Initialize
-        MailStore mailStore = new MailStoreFile();
+        MailStore mailStore = new EncryptDecorator(new MailStoreFile()) ;
         mailStore.clearTheFile();
         MessageNewerComparator comparator = new MessageNewerComparator();
 

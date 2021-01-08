@@ -1,6 +1,8 @@
 package Part2Encoding.BaseClasses;
 
+import javax.crypto.NoSuchPaddingException;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.util.LinkedList;
 
 /**
@@ -18,7 +20,7 @@ public abstract class MailStore {
     /**
      * Send a new message to a user.
      */
-    public abstract void sendMail(String subject, String body, String userName, String receiver) throws IOException;
+    public abstract void sendMail(String subject, String body, String userName, String receiver) throws IOException, NoSuchAlgorithmException, NoSuchPaddingException;
 
     public abstract void clearTheFile() throws IOException;
 
